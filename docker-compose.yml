@@ -20,7 +20,8 @@ services:
     - user-service
     - message-service
     command:
-    - "--redis.address=47.96.141.35"
+    - "--redis.address=47.97.167.185"
+    - "--zookeeper.address=47.97.167.185"
 
   course-service:
     image: course-service:latest
@@ -28,14 +29,14 @@ services:
     - user-service
     command:
     - "--mysql.address=121.40.8.72"
-    - "--zookeeper.address=47.96.141.35"
+    - "--zookeeper.address=47.97.167.185"
 
   course-edge-service:
     image: course-edge-service:latest
     links:
     - user-edge-service
     command:
-    - "--zookeeper.address=47.96.141.35"
+    - "--zookeeper.address=47.97.167.185"
 
   api-gateway-zuul:
     image: api-gateway-zuul:latest
